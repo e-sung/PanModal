@@ -112,6 +112,7 @@ open class PanModalPresentationController: UIPresentationController {
             view = DimmedView()
         }
         view.didTap = { [weak self] _ in
+            self?.presentable?.dimmedViewDidTapped()
             if self?.presentable?.allowsTapToDismiss == true {
                 self?.presentedViewController.dismiss(animated: true)
             }
@@ -523,6 +524,7 @@ private extension PanModalPresentationController {
                     transition(to: .shortForm)
 
                 } else {
+                    presentable?.userDraggedToDismiss()
                     presentedViewController.dismiss(animated: true)
                 }
 
@@ -541,6 +543,7 @@ private extension PanModalPresentationController {
                     transition(to: .shortForm)
 
                 } else {
+                    presentable?.userDraggedToDismiss()
                     presentedViewController.dismiss(animated: true)
                 }
             }

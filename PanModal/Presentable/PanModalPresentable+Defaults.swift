@@ -116,6 +116,14 @@ public extension PanModalPresentable where Self: UIViewController {
     func willTransition(to state: PanModalPresentationController.PresentationState) {
 
     }
+    
+    func dimmedViewDidTapped() {
+
+    }
+    
+    func userDraggedToDismiss() {
+
+    }
 
     func panModalWillDismiss() {
 
